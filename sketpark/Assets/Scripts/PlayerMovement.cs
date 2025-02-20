@@ -14,10 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private bool canJump = true;
 
     public Transform cameraTransform;
-    public Transform groundCheck;
-    public float groundDistance = 0.3f;
-    public LayerMask groundMask;
-
     public float rotationSpeed = 10.0f;
     public float tiltSpeed = 5f; 
 
@@ -30,14 +26,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-            canJump = true;
-        }
-
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
 
@@ -45,32 +33,25 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.y = 0;
         if (moveDirection.magnitude > 1) moveDirection.Normalize();
 
-        // **🚀 NEW: FORCE TILT ON SLOPES**
         Vector3 groundNormal = Vector3.up; 
         if (OnSlope(out Vector3 slopeNormal))
         {
             groundNormal = slopeNormal;
-            moveDirection = Vector3.ProjectOnPlane(moveDirection, slopeNormal); // 🔥 Moves correctly on slope
+            moveDirection = Vector3.ProjectOnPlane(moveDirection, slopeNormal); 
             moveDirection *= slopeSpeedBoost; 
         }
         lastGroundNormal = groundNormal; 
 
-        // **🚀 FIXED: FULLY OVERRIDE ROTATION FOR TILT**
         if (moveDirection.magnitude > 0.1f)
         {
-            // First, rotate towards movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-
-            // THEN apply the tilt to match ground normal
             Quaternion tiltRotation = Quaternion.FromToRotation(Vector3.up, lastGroundNormal) * targetRotation;
-
-            // 🚀 FINAL: Force both rotations
             transform.rotation = Quaternion.Slerp(transform.rotation, tiltRotation, Time.deltaTime * tiltSpeed);
         }
 
         controller.Move(moveDirection * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && moveDirection.magnitude > 0.1f && canJump)
+        if (Input.GetButtonDown("Jump") && isGrounded && canJump)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             canJump = false;
@@ -80,12 +61,21 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    // **🚀 FINAL FIX: FORCE SLOPE DETECTION**
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.normal.y > 0.5f)
+        {
+            isGrounded = true;
+            canJump = true;
+            velocity.y = -2f; 
+        }
+    }
+
     bool OnSlope(out Vector3 slopeNormal)
     {
         slopeNormal = Vector3.up;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundDistance + 0.5f, groundMask))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 + 0.5f))
         {
             float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
             if (slopeAngle > 0 && slopeAngle < maxSlopeAngle)

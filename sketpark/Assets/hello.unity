@@ -191,7 +191,6 @@ GameObject:
   - component: {fileID: 443903723}
   - component: {fileID: 443903722}
   - component: {fileID: 443903721}
-  - component: {fileID: 443903725}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Ground
@@ -286,33 +285,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &443903725
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443903719}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &548746150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,15 +295,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4054
+      value: 3.2740276
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.4054
+      value: 3.2740276
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4054
+      value: 3.2740276
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -339,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bowl-side
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd156fdec9b29f240983a44c4acc737d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -408,11 +384,6 @@ MonoBehaviour:
   slopeSpeedBoost: 1.5
   maxSlopeAngle: 45
   cameraTransform: {fileID: 917069382}
-  groundCheck: {fileID: 443903724}
-  groundDistance: 0.2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
   rotationSpeed: 5.84
   tiltSpeed: 5
 --- !u!143 &653480813
@@ -732,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
       propertyPath: m_Name
       value: skateboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
