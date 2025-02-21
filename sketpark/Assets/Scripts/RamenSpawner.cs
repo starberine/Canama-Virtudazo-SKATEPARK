@@ -2,19 +2,52 @@ using UnityEngine;
 
 public class RamenSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints; // Set in Inspector
+    public Transform[] spawnPoints; // Fixed spawn locations
     public GameObject ramenPrefab;
+    private GameObject[] ramenInstances;
     private int currentRamenIndex = 0;
-    private GameObject currentRamen;
 
-    public void SpawnNextRamen()
+    void Start()
     {
-        if (currentRamen != null) Destroy(currentRamen); // Remove old ramen
+        PreSpawnRamen();
+        ActivateNextRamen();
+    }
 
-        if (currentRamenIndex < spawnPoints.Length)
+    void PreSpawnRamen()
+    {
+        ramenInstances = new GameObject[spawnPoints.Length];
+
+        for (int i = 0; i < spawnPoints.Length; i++)
         {
-            currentRamen = Instantiate(ramenPrefab, spawnPoints[currentRamenIndex].position, Quaternion.identity);
-            currentRamenIndex++;
+            ramenInstances[i] = Instantiate(ramenPrefab, spawnPoints[i].position, Quaternion.Euler(0, 0, 0));
+            ramenInstances[i].SetActive(false); // Hide all ramen initially
         }
+    }
+
+    public void ActivateNextRamen()
+    {
+        if (currentRamenIndex < ramenInstances.Length)
+        {
+            ramenInstances[currentRamenIndex].SetActive(true); // Show next ramen
+        }
+        else
+        {
+            EndGame(); // No more ramen, end the game!
+        }
+    }
+
+    public void RamenDelivered()
+    {
+        if (currentRamenIndex < ramenInstances.Length)
+        {
+            ramenInstances[currentRamenIndex].SetActive(false); // Hide the delivered ramen
+            currentRamenIndex++;
+            ActivateNextRamen(); // Activate the next ramen
+        }
+    }
+
+    void EndGame()
+    {
+        Debug.Log("🎉 ALL RAMEN DELIVERED! GAME OVER!");
     }
 }

@@ -3,7 +3,12 @@ guid: a92f4b5bc5f123d478d1cc4b33584dce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreText: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - winPanel: {instanceID: 0}
+  - losePanel: {instanceID: 0}
+  - ramenPrefab: {fileID: 919132149155446097, guid: 735fc958016850d4c9f39f6448ada64f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

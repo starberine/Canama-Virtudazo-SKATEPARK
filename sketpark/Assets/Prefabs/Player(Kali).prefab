@@ -69,16 +69,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 5596318495989143813}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
-      insertIndex: 3
       addedObject: {fileID: 8124906592344553995}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4313386589227084260}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7822112798042548445}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5334663555253307829}
+      addedObject: {fileID: 5596318495989143813}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1915873410957627705}
   m_SourcePrefab: {fileID: 100100000, guid: 686be760477b044499ece023dac6f3c5, type: 3}
 --- !u!4 &2783958769684205990 stripped
 Transform:
@@ -90,24 +93,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
   m_PrefabInstance: {fileID: 2389197798519158349}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5596318495989143813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3308258332181793564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0531d0beb2d7f04b9d5e71aa10d9edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Kali
-  speed: 0
-  jumpHeight: 0
-  gravity: 0
-  rotationSpeed: 10
-  cameraTransform: {fileID: 0}
 --- !u!54 &8124906592344553995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,9 +117,32 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!136 &4313386589227084260
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308258332181793564}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Height: 0.13660254
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.06830127, z: 0}
 --- !u!143 &7822112798042548445
 CharacterController:
   m_ObjectHideFlags: 0
@@ -161,7 +169,24 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.42, z: 0}
---- !u!114 &5334663555253307829
+--- !u!114 &5596318495989143813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308258332181793564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0531d0beb2d7f04b9d5e71aa10d9edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Kali
+  speed: 10
+  jumpHeight: 5
+  gravity: 9
+  rotationSpeed: 10
+--- !u!114 &1915873410957627705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,14 +199,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kali
-  speed: 3.54
-  jumpHeight: 1.5
-  gravity: -8.97
+  speed: 5
+  jumpHeight: 15
+  gravity: 9
   slopeSpeedBoost: 1.5
   maxSlopeAngle: 45
   cameraTransform: {fileID: 0}
-  rotationSpeed: 5.84
+  rotationSpeed: 10
   tiltSpeed: 5
+  grindSpeed: 10
 --- !u!1001 &7100626481261951499
 PrefabInstance:
   m_ObjectHideFlags: 0

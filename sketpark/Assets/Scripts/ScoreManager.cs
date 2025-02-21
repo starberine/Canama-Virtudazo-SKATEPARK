@@ -11,10 +11,6 @@ public class ScoreManager : MonoBehaviour
     public GameObject winPanel;
     public GameObject losePanel;
 
-    public GameObject ramenPrefab;
-    public Transform[] ramenSpawnPoints; // Set in Inspector
-
-    private GameObject currentRamen;
     private float timeRemaining = 60f; 
     private bool gameOver = false;
 
@@ -24,7 +20,6 @@ public class ScoreManager : MonoBehaviour
         UpdateTimerUI();
         winPanel.SetActive(false);
         losePanel.SetActive(false);
-        SpawnRamen(); // Spawn first ramen
     }
 
     void Update()
@@ -69,19 +64,7 @@ public class ScoreManager : MonoBehaviour
             {
                 WinGame();
             }
-            else
-            {
-                SpawnRamen(); // Spawn next ramen
-            }
         }
-    }
-
-    void SpawnRamen()
-    {
-        if (currentRamen != null) return; // Ensure only one ramen exists
-
-        Transform spawnPoint = ramenSpawnPoints[Random.Range(0, ramenSpawnPoints.Length)];
-        currentRamen = Instantiate(ramenPrefab, spawnPoint.position, Quaternion.identity);
     }
 
     void WinGame()

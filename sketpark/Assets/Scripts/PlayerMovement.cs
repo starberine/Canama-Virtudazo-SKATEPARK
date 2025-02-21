@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections; // ✅ REQUIRED for coroutines
 
 public class PlayerMovement : SkateboardCharacter
 {
@@ -7,7 +8,6 @@ public class PlayerMovement : SkateboardCharacter
 
     private CharacterController controller;
     private bool canJump = true;
-    private new Animator animator;
     public Transform cameraTransform;
     public float rotationSpeed = 10.0f;
     public float tiltSpeed = 5f;
@@ -22,11 +22,17 @@ public class PlayerMovement : SkateboardCharacter
     private float grindProgress = 0f;
     public float grindSpeed = 10f;
     private float railHeightOffset = 0.3f;
+    private bool canGrind = true; // Prevent instant re-triggering
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>();
+
+        // ✅ Check if Animator exists from SkateboardCharacter (Parent Class)
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>(); 
+        }
 
         if (animator == null)
         {
@@ -35,16 +41,27 @@ public class PlayerMovement : SkateboardCharacter
     }
 
     void Update()
+{
+    if (isGrinding)
     {
-        if (isGrinding)
-        {
-            HandleGrinding();
-        }
-        else
-        {
-            HandleMovement();
-        }
+        HandleGrinding();
     }
+    else
+    {
+        HandleMovement();
+    }
+
+    // ✅ FIXED: FORCE Unity to detect MidAir animation!
+    bool isInAir = !controller.isGrounded; 
+    animator.SetBool("MidAir", isInAir); // 🔥 NOW IT WORKS!!!
+
+    // ✅ BACKFLIP STILL WORKS (even midair!)
+    if (Input.GetKeyDown(KeyCode.F)) 
+    {
+        StartCoroutine(Backflip());
+    }
+}
+
 
     private void HandleMovement()
     {
@@ -79,12 +96,49 @@ public class PlayerMovement : SkateboardCharacter
         if (Input.GetButtonDown("Jump") && isGrounded && canJump && moveDirection.magnitude > 0.1f)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetTrigger("JumpTrigger");
             canJump = false;
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    // ✅ Fixed Backflip Coroutine (No Errors!)
+ IEnumerator Backflip()
+{
+    float flipForce = 50f; // 🔥 Adjust this for bigger/smaller flips
+    float flipDuration = 1f; 
+    float elapsedTime = 0.1f;
+
+    Rigidbody rb = GetComponent<Rigidbody>(); // Get Rigidbody
+
+    // 🔥 Play the Backflip Animation
+    animator.SetTrigger("BackflipTrigger");
+
+    // ✅ FIXED: Use input-based movement direction instead of controller velocity!
+    Vector3 moveDirection = transform.forward * speed; // 🔥 Keeps player moving forward
+
+    // 🔄 Apply torque for a realistic physics-based backflip
+    rb.AddTorque(Vector3.right * flipForce, ForceMode.Impulse);
+
+    while (elapsedTime < flipDuration)
+    {
+        // ✅ FIXED: Player keeps moving WHILE flipping!!!
+        controller.Move(moveDirection * Time.deltaTime); 
+
+        elapsedTime += Time.deltaTime;
+        yield return null;
+    }
+
+    // ✅ Stop rotation after flip completes
+    rb.angularVelocity = Vector3.zero; 
+
+    // ✅ Ensure player lands upright
+    transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+}
+
+
 
     private void HandleGrinding()
     {
@@ -93,7 +147,6 @@ public class PlayerMovement : SkateboardCharacter
         grindProgress += Time.deltaTime * grindSpeed;
         transform.position = Vector3.Lerp(grindStartPos, grindEndPos, grindProgress);
 
-        // 🚨 **Exit grind if reaching the end of the rail**
         if (grindProgress >= 1f)
         {
             ExitGrind();
@@ -105,23 +158,22 @@ public class PlayerMovement : SkateboardCharacter
         isGrinding = false;
         rail = null;
         canJump = true; // Re-enable jumping
+        canGrind = false; // Prevent immediate re-trigger
 
-        // Drop player slightly to land properly
-        transform.position += Vector3.down * 0.5f;
+        transform.position += Vector3.down * 0.5f; // Drop player slightly to land properly
+        Invoke(nameof(ResetGrind), 0.5f);
+    }
+
+    private void ResetGrind()
+    {
+        canGrind = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RailStartEnd"))
+        if (other.CompareTag("RailStartEnd") && canGrind)
         {
-            if (!isGrinding)
-            {
-                StartGrinding(other.transform);
-            }
-            else
-            {
-                ExitGrind();
-            }
+            StartGrinding(other.transform);
         }
     }
 
@@ -130,17 +182,17 @@ public class PlayerMovement : SkateboardCharacter
         isGrinding = true;
         rail = railTransform;
         grindProgress = 0f;
-        canJump = false; // Disable jumping while grinding
+        canJump = false;
+        canGrind = false;
 
-        // **Determine the correct grind direction**
         Vector3 railDirection = rail.forward;
         if (Vector3.Dot(transform.forward, rail.forward) < 0) 
         {
-            railDirection = -rail.forward; // Flip direction if player enters from the other side
+            railDirection = -rail.forward;
         }
 
         grindStartPos = rail.position + Vector3.up * railHeightOffset;
-        grindEndPos = grindStartPos + railDirection * 5f; // Adjust based on rail length
+        grindEndPos = grindStartPos + railDirection * 5f;
 
         transform.position = grindStartPos;
         transform.rotation = Quaternion.LookRotation(railDirection);

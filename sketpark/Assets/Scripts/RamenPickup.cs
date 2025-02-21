@@ -7,19 +7,23 @@ public class RamenPickup : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isPickedUp)
+        if (other.CompareTag("Player") && !isPickedUp && !other.GetComponentInChildren<RamenPickup>())
         {
             player = other.transform;
             isPickedUp = true;
-            GetComponent<Collider>().enabled = false; // Disable collider after pickup
+            GetComponent<Collider>().enabled = false; 
+            transform.SetParent(player); 
+            transform.localPosition = new Vector3(0, 1, 0);
+            Debug.Log("🎒 Ramen picked up and attached to player!");
         }
     }
-
     void Update()
+{
+    if (player != null)
     {
-        if (isPickedUp && player != null)
-        {
-            transform.position = Vector3.Lerp(transform.position, player.position + new Vector3(0, 1, 0), Time.deltaTime * 5f);
-        }
+        Debug.Log("👀 Player's child: " + player.GetComponentInChildren<RamenPickup>());
     }
+}
+
+    
 }
