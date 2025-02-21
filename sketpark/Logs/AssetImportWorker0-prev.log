@@ -15,7 +15,7 @@ D:/Github/Canama-Virtudazo-SKATEPARK/sketpark
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57946
+49957
 Successfully changed project path to: D:/Github/Canama-Virtudazo-SKATEPARK/sketpark
 D:/Github/Canama-Virtudazo-SKATEPARK/sketpark
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Github/Canama-Virtudazo-SKATEPARK/sketpark
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [4360]  Target information:
+Player connection [18408]  Target information:
 
-Player connection [4360]  * "[IP] 192.168.1.5 [Port] 0 [Flags] 2 [Guid] 868358189 [EditorId] 868358189 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0I9CED2O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [18408]  * "[IP] 192.168.1.5 [Port] 0 [Flags] 2 [Guid] 219696079 [EditorId] 219696079 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-0I9CED2O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [4360] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [4360] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18408] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [18408] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -72,44 +72,44 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity Hub/2022.3.55f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity Hub/2022.3.55f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/Unity Hub/2022.3.55f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56012
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56544
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity Hub/2022.3.55f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.020868 seconds.
-- Loaded All Assemblies, in  1.318 seconds
+Registered in 0.033556 seconds.
+- Loaded All Assemblies, in  3.161 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.172 seconds
-Domain Reload Profiling: 2491ms
-	BeginReloadAssembly (292ms)
+- Finished resetting the current domain, in  0.920 seconds
+Domain Reload Profiling: 4081ms
+	BeginReloadAssembly (1871ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (75ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (211ms)
 	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (180ms)
-	LoadAllAssembliesAndSetupDomain (752ms)
-		LoadAssemblies (290ms)
+	initialDomainReloadingComplete (318ms)
+	LoadAllAssembliesAndSetupDomain (742ms)
+		LoadAssemblies (1849ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (750ms)
-			TypeCache.Refresh (748ms)
-				TypeCache.ScanAssembly (600ms)
+		AnalyzeDomain (739ms)
+			TypeCache.Refresh (737ms)
+				TypeCache.ScanAssembly (548ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1173ms)
+	FinalizeReload (921ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (981ms)
+		SetupLoadedEditorAssemblies (769ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (54ms)
-			SetLoadedEditorAssemblies (28ms)
+			InitializePlatformSupportModulesInManaged (53ms)
+			SetLoadedEditorAssemblies (40ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (8ms)
-			ProcessInitializeOnLoadAttributes (713ms)
-			ProcessInitializeOnLoadMethodAttributes (178ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (500ms)
+			ProcessInitializeOnLoadMethodAttributes (174ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,50 +118,50 @@ Domain Reload Profiling: 2491ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.377 seconds
+- Loaded All Assemblies, in  0.547 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.754 seconds
-Domain Reload Profiling: 3130ms
-	BeginReloadAssembly (724ms)
+- Finished resetting the current domain, in  0.678 seconds
+Domain Reload Profiling: 1226ms
+	BeginReloadAssembly (351ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (33ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (85ms)
-	RebuildCommonClasses (132ms)
-	RebuildNativeTypeToScriptingClass (37ms)
-	initialDomainReloadingComplete (57ms)
-	LoadAllAssembliesAndSetupDomain (425ms)
-		LoadAssemblies (648ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (65ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (77ms)
+		LoadAssemblies (254ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (238ms)
-			TypeCache.Refresh (11ms)
+		AnalyzeDomain (9ms)
+			TypeCache.Refresh (7ms)
 				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (224ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (1755ms)
+	FinalizeReload (679ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (856ms)
+		SetupLoadedEditorAssemblies (450ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (43ms)
-			SetLoadedEditorAssemblies (36ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (11ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (86ms)
-			ProcessInitializeOnLoadAttributes (619ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
-			AfterProcessingInitializeOnLoad (9ms)
+			BeforeProcessingInitializeOnLoad (46ms)
+			ProcessInitializeOnLoadAttributes (344ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (27ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.35 seconds
+		AwakeInstancesAfterBackupRestoration (15ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.27 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 3 unused Assets / (413.2 KB). Loaded Objects now: 480.
-Memory consumption went from 49.5 MB to 49.1 MB.
-Total: 12.486100 ms (FindLiveObjects: 0.123200 ms CreateObjectMapping: 0.011100 ms MarkObjects: 12.113400 ms  DeleteObjects: 0.234900 ms)
+Memory consumption went from 49.4 MB to 49.0 MB.
+Total: 47.067500 ms (FindLiveObjects: 0.097600 ms CreateObjectMapping: 0.008300 ms MarkObjects: 46.794100 ms  DeleteObjects: 0.165200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -179,67 +179,202 @@ AssetImportParameters requested are different than current active one (requested
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 35601.950816 seconds.
+  Time since last request: 1308.935444 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/character-skate-boy.mtl
+  artifactKey: Guid(2642f2612cb1ead4ea6f3e70a290c353) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/character-skate-boy.mtl using Guid(2642f2612cb1ead4ea6f3e70a290c353) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '43dffc765d9e17c38a6f4b57985aab48') in 0.965041 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/kenney_mini-skate/Models/GLB format/pallet.glb
+  artifactKey: Guid(ef89d30b9689a5c45ace02f591805fac) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/GLB format/pallet.glb using Guid(ef89d30b9689a5c45ace02f591805fac) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a34664ea9ab72887eec7dc5fdcc83ecc') in 0.003408 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/skateboard.fbx
+  artifactKey: Guid(686be760477b044499ece023dac6f3c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/skateboard.fbx using Guid(686be760477b044499ece023dac6f3c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '03f53d555bca1029ac2ccd8545257e45') in 0.315424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/floor-concrete.obj
+  artifactKey: Guid(e47221a96b0f5454c80a47197d50bcec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/floor-concrete.obj using Guid(e47221a96b0f5454c80a47197d50bcec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b404902fb21f0c116e4091d3ce229597') in 0.073713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/kenney_mini-skate/Models/GLB format/character-skate-girl.glb
+  artifactKey: Guid(6b50c6b5b69a90240abb07e52299d3ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/GLB format/character-skate-girl.glb using Guid(6b50c6b5b69a90240abb07e52299d3ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '043aa0795e9aa6cd6b3e7008ca59b5cf') in 0.022646 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/obstacle-box.fbx
+  artifactKey: Guid(f75baebaa6105794e95dece3e8d231b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/obstacle-box.fbx using Guid(f75baebaa6105794e95dece3e8d231b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b754d2ebd23e6f1948d9aa552cc8f148') in 0.077054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/kenney_mini-skate/Previews/character-skate-girl.png
+  artifactKey: Guid(29b5386b26d9e8b499e6a620cd0c9c95) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Previews/character-skate-girl.png using Guid(29b5386b26d9e8b499e6a620cd0c9c95) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8ed30b0407254d01eb43e2029846b900') in 0.120654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/rail-slope.fbx
+  artifactKey: Guid(4f525cb3a4492384badd9ead6771b101) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/rail-slope.fbx using Guid(4f525cb3a4492384badd9ead6771b101) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cc717b304fae4b176a5734bcbdab2572') in 0.071342 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/bowl-corner-inner.fbx
+  artifactKey: Guid(dba1d64b863d89d42919c941a4450236) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/bowl-corner-inner.fbx using Guid(dba1d64b863d89d42919c941a4450236) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c393d2623bbf33f113a70b71740d1f43') in 0.135530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/bowl-corner-outer.obj
+  artifactKey: Guid(0da3fe22e69e68f4aa239c4b19ff302f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/bowl-corner-outer.obj using Guid(0da3fe22e69e68f4aa239c4b19ff302f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ad20bf1fdafd7d1ee503efe46264c846') in 0.054600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/structure-platform.obj
+  artifactKey: Guid(a18811b1bdecd5d4b91df4c041c28f9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/structure-platform.obj using Guid(a18811b1bdecd5d4b91df4c041c28f9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c77ee0184d4a7bf0370c6c31cbccbee7') in 0.143425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/kenney_mini-skate/Previews/rail-high.png
+  artifactKey: Guid(daefb37757051c541abc2a81025f5b4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Previews/rail-high.png using Guid(daefb37757051c541abc2a81025f5b4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd3117e5724967d0cbfccb42a3ffa6924') in 0.072025 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/rail-high.fbx
+  artifactKey: Guid(1611ee5ba878856458cc4752bf2aa5be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/rail-high.fbx using Guid(1611ee5ba878856458cc4752bf2aa5be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ea01fc7aebde2cff3ddf52307122347a') in 0.077040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
   path: Assets/kenney_mini-skate/Models/FBX format/bowl-corner-outer.fbx
-  artifactKey: Guid(55e5c7dd8db3e3547bc5ed5655c4fb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kenney_mini-skate/Models/FBX format/bowl-corner-outer.fbx using Guid(55e5c7dd8db3e3547bc5ed5655c4fb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
- -> (artifact id: '22b9f0f975f27edcd23e3f54395fbbc0') in 1.207358 seconds
+  artifactKey: Guid(55e5c7dd8db3e3547bc5ed5655c4fb7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/bowl-corner-outer.fbx using Guid(55e5c7dd8db3e3547bc5ed5655c4fb7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a420daa505fb00bbca86b9cc21f9a2f8') in 0.048875 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000085 seconds.
-  path: Assets/kenney_mini-skate/Models/FBX format/steps.fbx
-  artifactKey: Guid(550bb196fb7e438438427250ee7c891f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kenney_mini-skate/Models/FBX format/steps.fbx using Guid(550bb196fb7e438438427250ee7c891f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
- -> (artifact id: '472376184e66171252cfeaf8b0834a1c') in 0.267455 seconds
+  Time since last request: 0.000029 seconds.
+  path: Assets/kenney_mini-skate/Models/GLB format/obstacle-box.glb
+  artifactKey: Guid(afddd50e72f001044940dcafb4d0cada) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/GLB format/obstacle-box.glb using Guid(afddd50e72f001044940dcafb4d0cada) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1049bcf2e046a555e362f22dda9f014e') in 0.003912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/Scenes/GameScene.unity
+  artifactKey: Guid(96d27b6f0b34c1f41ac89d74e1d7d731) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/GameScene.unity using Guid(96d27b6f0b34c1f41ac89d74e1d7d731) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'fe35d416a500a4c989ed04147b8fb832') in 0.070368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/kenney_mini-skate/Models/FBX format/obstacle-middle.fbx
+  artifactKey: Guid(39300e5d8aa47a747a06cd3b7dc40225) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/FBX format/obstacle-middle.fbx using Guid(39300e5d8aa47a747a06cd3b7dc40225) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '77bbec9e72df6e6f19aa652a2ed0610c') in 0.073474 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/kenney_mini-skate/Models/FBX format/character-skate-boy.fbx
-  artifactKey: Guid(75e79efb4407a3845955679ac148c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kenney_mini-skate/Models/FBX format/character-skate-boy.fbx using Guid(75e79efb4407a3845955679ac148c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
- -> (artifact id: '251aec0951d3767dfdc5e11fb5740546') in 0.382777 seconds
+  Time since last request: 0.000032 seconds.
+  path: Assets/kenney_mini-skate/Previews/rail-low.png
+  artifactKey: Guid(24d02ee8cb07f684bab1c40ba7857fc8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Previews/rail-low.png using Guid(24d02ee8cb07f684bab1c40ba7857fc8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd286cfe9d56c1fdb45c2351b01c72965') in 0.081925 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 72
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 0.190690 seconds.
-  path: Assets/kenney_mini-skate/Previews/bowl-side.png
-  artifactKey: Guid(08d199a51ace20443b1b1c3f18e744ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kenney_mini-skate/Previews/bowl-side.png using Guid(08d199a51ace20443b1b1c3f18e744ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
- -> (artifact id: '1511caf1eb24a48ad8a3e6df91f84d2a') in 0.335525 seconds
+  Time since last request: 0.000033 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/rail-high.obj
+  artifactKey: Guid(fb950fa86f8c4e142890d69cfd120324) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/rail-high.obj using Guid(fb950fa86f8c4e142890d69cfd120324) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '743055f908462338144ad7b490d40dc8') in 0.071958 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.022460 seconds.
-  path: Assets/kenney_mini-skate/Previews/obstacle-end.png
-  artifactKey: Guid(a33c883a875549240acea30c7b5b9578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kenney_mini-skate/Previews/obstacle-end.png using Guid(a33c883a875549240acea30c7b5b9578) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
- -> (artifact id: '35feedbc94042f5b1dfe5a76ed733f9e') in 0.063731 seconds
+  Time since last request: 0.000026 seconds.
+  path: Assets/kenney_mini-skate/Models/OBJ format/floor-concrete.mtl
+  artifactKey: Guid(cda7c797df1520e4f928c80907cc5193) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/OBJ format/floor-concrete.mtl using Guid(cda7c797df1520e4f928c80907cc5193) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b40cc375b03ec8396768663b6ffc425d') in 0.004969 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/kenney_mini-skate/Models/GLB format/structure-platform.glb
+  artifactKey: Guid(c6055395562fef947b1d41ec013bef62) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/GLB format/structure-platform.glb using Guid(c6055395562fef947b1d41ec013bef62) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e9bbb61d6a0b6035b4ea049524b23f61') in 0.009262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.009713 seconds.
+  path: Assets/kenney_mini-skate/Models/GLB format/rail-slope.glb
+  artifactKey: Guid(45588ef6973b13747a625a07382b149a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/kenney_mini-skate/Models/GLB format/rail-slope.glb using Guid(45588ef6973b13747a625a07382b149a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a367a3d0cecfb7ff297c77b2d785c503') in 0.004225 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server

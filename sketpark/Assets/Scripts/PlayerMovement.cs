@@ -7,18 +7,26 @@ public class PlayerMovement : SkateboardCharacter
 
     private CharacterController controller;
     private bool canJump = true;
-    private Animator animator;
-
+    private new Animator animator;
     public Transform cameraTransform;
     public float rotationSpeed = 10.0f;
     public float tiltSpeed = 5f;
 
     private Vector3 lastGroundNormal = Vector3.up;
 
+    // 🔥 Grinding Variables
+    private bool isGrinding = false;
+    private Transform rail;
+    private Vector3 grindStartPos;
+    private Vector3 grindEndPos;
+    private float grindProgress = 0f;
+    public float grindSpeed = 10f;
+    private float railHeightOffset = 0.3f;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>(); // 🔥 Finds the animator in child objects
+        animator = GetComponentInChildren<Animator>();
 
         if (animator == null)
         {
@@ -28,6 +36,18 @@ public class PlayerMovement : SkateboardCharacter
 
     void Update()
     {
+        if (isGrinding)
+        {
+            HandleGrinding();
+        }
+        else
+        {
+            HandleMovement();
+        }
+    }
+
+    private void HandleMovement()
+    {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
 
@@ -35,7 +55,7 @@ public class PlayerMovement : SkateboardCharacter
         moveDirection.y = 0;
         if (moveDirection.magnitude > 1) moveDirection.Normalize();
 
-        animator.SetFloat("Speed", moveDirection.magnitude * speed); // 🔥 Set speed parameter
+        animator.SetFloat("Speed", moveDirection.magnitude * speed);
 
         controller.Move(moveDirection * speed * Time.deltaTime);
 
@@ -64,6 +84,66 @@ public class PlayerMovement : SkateboardCharacter
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void HandleGrinding()
+    {
+        if (rail == null) return;
+
+        grindProgress += Time.deltaTime * grindSpeed;
+        transform.position = Vector3.Lerp(grindStartPos, grindEndPos, grindProgress);
+
+        // 🚨 **Exit grind if reaching the end of the rail**
+        if (grindProgress >= 1f)
+        {
+            ExitGrind();
+        }
+    }
+
+    private void ExitGrind()
+    {
+        isGrinding = false;
+        rail = null;
+        canJump = true; // Re-enable jumping
+
+        // Drop player slightly to land properly
+        transform.position += Vector3.down * 0.5f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("RailStartEnd"))
+        {
+            if (!isGrinding)
+            {
+                StartGrinding(other.transform);
+            }
+            else
+            {
+                ExitGrind();
+            }
+        }
+    }
+
+    private void StartGrinding(Transform railTransform)
+    {
+        isGrinding = true;
+        rail = railTransform;
+        grindProgress = 0f;
+        canJump = false; // Disable jumping while grinding
+
+        // **Determine the correct grind direction**
+        Vector3 railDirection = rail.forward;
+        if (Vector3.Dot(transform.forward, rail.forward) < 0) 
+        {
+            railDirection = -rail.forward; // Flip direction if player enters from the other side
+        }
+
+        grindStartPos = rail.position + Vector3.up * railHeightOffset;
+        grindEndPos = grindStartPos + railDirection * 5f; // Adjust based on rail length
+
+        transform.position = grindStartPos;
+        transform.rotation = Quaternion.LookRotation(railDirection);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

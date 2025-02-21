@@ -339,7 +339,12 @@
 "Assets/Scripts/Kaloy.cs"
 "Assets/Scripts/MainMenuView.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/RailGrind.cs"
+"Assets/Scripts/RamenPickup.cs"
+"Assets/Scripts/RamenSpawner.cs"
+"Assets/Scripts/ScoreManager.cs"
 "Assets/Scripts/SkateboardCharacter.cs"
+"Assets/Scripts/SubmitRamen.cs"
 "Assets/Scripts/View.cs"
 "Assets/Scripts/ViewManager.cs"
 -langversion:9.0

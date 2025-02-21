@@ -198,7 +198,6 @@ MonoBehaviour:
   jumpHeight: 0
   gravity: 0
   rotationSpeed: 10
-  cameraTransform: {fileID: 0}
 --- !u!54 &8024549986953994284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -273,3 +272,4 @@ MonoBehaviour:
   cameraTransform: {fileID: 0}
   rotationSpeed: 5.84
   tiltSpeed: 5
+  grindSpeed: 1
