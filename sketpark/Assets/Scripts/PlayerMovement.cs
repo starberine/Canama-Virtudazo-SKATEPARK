@@ -9,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxSlopeAngle = 45f;
 
     private CharacterController controller;
-    private Vector3 velocity;
+    public Vector3 velocity;
     private bool isGrounded;
     private bool canJump = true;
+    private Animator animator;
+
 
     public Transform cameraTransform;
     public float rotationSpeed = 10.0f;
@@ -19,26 +21,36 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 lastGroundNormal = Vector3.up;
 
-    void Start()
+   void Start()
+{
+    controller = GetComponent<CharacterController>();
+    animator = GetComponentInChildren<Animator>(); // 🔥 FINDS THE ANIMATOR IN CHILD OBJECTS
+
+    if (animator == null)
     {
-        controller = GetComponent<CharacterController>();
+        Debug.LogError("❌ Animator component NOT FOUND on the player or its children!");
     }
+}
+
 
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveDirection = cameraTransform.forward * moveZ + cameraTransform.right * moveX;
-        moveDirection.y = 0;
-        if (moveDirection.magnitude > 1) moveDirection.Normalize();
+         Vector3 moveDirection = cameraTransform.forward * moveZ + cameraTransform.right * moveX;
+    moveDirection.y = 0;
+    if (moveDirection.magnitude > 1) moveDirection.Normalize();
+
+    animator.SetFloat("Speed", moveDirection.magnitude * speed); // 🔥 SET SPEED PARAMETER
+
+    controller.Move(moveDirection * speed * Time.deltaTime);
 
         Vector3 groundNormal = Vector3.up; 
         if (OnSlope(out Vector3 slopeNormal))
         {
             groundNormal = slopeNormal;
-            moveDirection = Vector3.ProjectOnPlane(moveDirection, slopeNormal); 
-            moveDirection *= slopeSpeedBoost; 
+            moveDirection = Vector3.ProjectOnPlane(moveDirection, slopeNormal) * slopeSpeedBoost;
         }
         lastGroundNormal = groundNormal; 
 
@@ -51,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(moveDirection * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && canJump)
+        if (Input.GetButtonDown("Jump") && isGrounded && canJump && moveDirection.magnitude > 0.1f)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             canJump = false;
@@ -85,5 +97,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void ApplyJumpBoost(float jumpForce)
+    {
+        if (controller.isGrounded)
+        {
+            velocity.y = jumpForce;
+            controller.Move(new Vector3(0, velocity.y * Time.deltaTime, 0));
+        }
     }
 }
