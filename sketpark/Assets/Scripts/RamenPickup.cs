@@ -14,16 +14,12 @@ public class RamenPickup : MonoBehaviour
             GetComponent<Collider>().enabled = false; 
             transform.SetParent(player); 
             transform.localPosition = new Vector3(0, 1, 0);
-            Debug.Log("🎒 Ramen picked up and attached to player!");
         }
     }
     void Update()
-{
-    if (player != null)
     {
-        Debug.Log("👀 Player's child: " + player.GetComponentInChildren<RamenPickup>());
+        
     }
-}
 
     
 }

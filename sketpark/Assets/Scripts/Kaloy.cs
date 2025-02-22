@@ -3,15 +3,14 @@ using UnityEngine;
 public class Kaloy : SkateboardCharacter
 {
     public float rotationSpeed = 10.0f;
-
     private bool canJump = true;
 
     void Awake()
     {
         characterName = "Kaloy";
         speed = 6.0f;
-        jumpHeight = 1.5f;
-        gravity = -30.0f;
+        jumpHeight = 9f;
+        gravity = -9f;
     }
 
     void Update()
@@ -23,14 +22,11 @@ public class Kaloy : SkateboardCharacter
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
-
         Vector3 moveDirection = Camera.main.transform.forward * moveZ + Camera.main.transform.right * moveX;
 
         moveDirection.y = 0;
         if (moveDirection.magnitude > 1) moveDirection.Normalize();
-
         animator.SetFloat("Speed", moveDirection.magnitude * speed);
-
         controller.Move(moveDirection * speed * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump") && isGrounded && canJump)

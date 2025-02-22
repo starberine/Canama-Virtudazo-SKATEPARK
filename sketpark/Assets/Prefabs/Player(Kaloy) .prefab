@@ -68,8 +68,8 @@ PrefabInstance:
       addedObject: {fileID: 8497064068074923318}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 8632228625490079227}
+      insertIndex: -1
+      addedObject: {fileID: 5026720797172363316}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6334937991317791545}
@@ -88,7 +88,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 686be760477b044499ece023dac6f3c5, type: 3}
   m_PrefabInstance: {fileID: 1814360263323306911}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &8632228625490079227
+--- !u!54 &5026720797172363316
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +112,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!136 &6334937991317791545
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -178,8 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Kaloy
   speed: 6
-  jumpHeight: 9
-  gravity: 9
+  jumpHeight: 4
+  gravity: -9
   rotationSpeed: 10
 --- !u!114 &4377202027033684182
 MonoBehaviour:
@@ -196,13 +196,13 @@ MonoBehaviour:
   characterName: Kaloy
   speed: 5
   jumpHeight: 15
-  gravity: 9
+  gravity: -9
   slopeSpeedBoost: 1.5
   maxSlopeAngle: 45
   cameraTransform: {fileID: 0}
   rotationSpeed: 5
   tiltSpeed: 5
-  grindSpeed: 3.49
+  grindSpeed: 2
 --- !u!4 &2208838005618453620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 686be760477b044499ece023dac6f3c5, type: 3}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RamenSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints; // Fixed spawn locations
+    public Transform[] spawnPoints; 
     public GameObject ramenPrefab;
     private GameObject[] ramenInstances;
     private int currentRamenIndex = 0;
@@ -20,7 +20,7 @@ public class RamenSpawner : MonoBehaviour
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             ramenInstances[i] = Instantiate(ramenPrefab, spawnPoints[i].position, ramenPrefab.transform.rotation);
-            ramenInstances[i].SetActive(false); // Hide all ramen initially
+            ramenInstances[i].SetActive(false); 
         }
     }
 
@@ -28,11 +28,11 @@ public class RamenSpawner : MonoBehaviour
     {
         if (currentRamenIndex < ramenInstances.Length)
         {
-            ramenInstances[currentRamenIndex].SetActive(true); // Show next ramen
+            ramenInstances[currentRamenIndex].SetActive(true); 
         }
         else
         {
-            EndGame(); // No more ramen, end the game!
+            EndGame(); 
         }
     }
 
@@ -40,9 +40,9 @@ public class RamenSpawner : MonoBehaviour
     {
         if (currentRamenIndex < ramenInstances.Length)
         {
-            ramenInstances[currentRamenIndex].SetActive(false); // Hide the delivered ramen
+            ramenInstances[currentRamenIndex].SetActive(false); 
             currentRamenIndex++;
-            ActivateNextRamen(); // Activate the next ramen
+            ActivateNextRamen(); 
         }
     }
 

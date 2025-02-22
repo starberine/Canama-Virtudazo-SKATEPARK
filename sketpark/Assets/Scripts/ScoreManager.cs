@@ -1,15 +1,16 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public int totalRamen = 5; 
     private int collectedRamen = 0; 
-    public TMP_Text scoreText;
-    public TMP_Text timerText;
+    public Text timerText; 
     public GameObject winPanel;
     public GameObject losePanel;
+
+    public Image[] ramenImages; 
 
     private float timeRemaining = 60f; 
     private bool gameOver = false;
@@ -45,17 +46,20 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateScoreUI()
     {
-        scoreText.text = $"{collectedRamen}/{totalRamen} ramen collected";
+        for (int i = 0; i < ramenImages.Length; i++)
+        {
+            ramenImages[i].enabled = (i < collectedRamen); 
+        }
     }
 
     void UpdateTimerUI()
     {
-        timerText.text = $"Time: {Mathf.Ceil(timeRemaining)}s";
+        timerText.text = $"{Mathf.Ceil(timeRemaining)}s";
     }
 
     public void DeliverRamen()
     {
-        if (!gameOver)
+        if (!gameOver && collectedRamen < totalRamen)
         {
             collectedRamen++;
             UpdateScoreUI();

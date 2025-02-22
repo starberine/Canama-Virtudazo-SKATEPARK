@@ -5,16 +5,12 @@ public class PlayerMovement : SkateboardCharacter
 {
     public float slopeSpeedBoost = 1.5f;
     public float maxSlopeAngle = 45f;
-
     private CharacterController controller;
     private bool canJump = true;
     public Transform cameraTransform;
     public float rotationSpeed = 10.0f;
     public float tiltSpeed = 5f;
-
     private Vector3 lastGroundNormal = Vector3.up;
-
-    
     private bool isGrinding = false;
     private Transform rail;
     private Vector3 grindStartPos;
@@ -42,6 +38,8 @@ public class PlayerMovement : SkateboardCharacter
 
     void Update()
     {
+        isGrounded = controller.isGrounded;
+
         if (isGrinding)
         {
             HandleGrinding();
@@ -103,27 +101,27 @@ public class PlayerMovement : SkateboardCharacter
     }
 
     
- IEnumerator Backflip()
-{
-    float flipForce = 50f; 
-    float flipDuration = 1f; 
-    float elapsedTime = 0.1f;
+    IEnumerator Backflip()
+    {
+        float flipForce = 50f; 
+        float flipDuration = 1f; 
+        float elapsedTime = 0.1f;
 
-    Rigidbody rb = GetComponent<Rigidbody>(); 
-    animator.SetTrigger("BackflipTrigger");
-    Vector3 moveDirection = transform.forward * speed; 
-    rb.AddTorque(Vector3.right * flipForce, ForceMode.Impulse);
+        Rigidbody rb = GetComponent<Rigidbody>(); 
+        animator.SetTrigger("BackflipTrigger");
+        Vector3 moveDirection = transform.forward * speed; 
+        rb.AddTorque(Vector3.right * flipForce, ForceMode.Impulse);
 
-    while (elapsedTime < flipDuration)
-    {       
-        controller.Move(moveDirection * Time.deltaTime); 
-        elapsedTime += Time.deltaTime;
-        yield return null;
+        while (elapsedTime < flipDuration)
+        {       
+            controller.Move(moveDirection * Time.deltaTime); 
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        rb.angularVelocity = Vector3.zero; 
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
     }
-
-    rb.angularVelocity = Vector3.zero; 
-    transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-}
 
     private void HandleGrinding()
     {

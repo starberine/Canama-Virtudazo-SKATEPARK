@@ -11,13 +11,11 @@ public class CharacterSpawner : MonoBehaviour
         int selectedCharacterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
         GameObject spawnedCharacter = Instantiate(characters[selectedCharacterIndex], spawnPoint.position, spawnPoint.rotation);
 
-        // Assign the spawned character to CameraFollow
         if (cameraFollow != null)
         {
             cameraFollow.player = spawnedCharacter.transform;
         }
-
-        // Assign cameraTransform to PlayerMovement
+        
         PlayerMovement playerMovement = spawnedCharacter.GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
