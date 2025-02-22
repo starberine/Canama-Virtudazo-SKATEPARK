@@ -19,7 +19,7 @@ public class RamenSpawner : MonoBehaviour
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            ramenInstances[i] = Instantiate(ramenPrefab, spawnPoints[i].position, Quaternion.Euler(0, 0, 0));
+            ramenInstances[i] = Instantiate(ramenPrefab, spawnPoints[i].position, ramenPrefab.transform.rotation);
             ramenInstances[i].SetActive(false); // Hide all ramen initially
         }
     }

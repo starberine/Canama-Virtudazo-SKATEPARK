@@ -207,7 +207,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 0}
   rotationSpeed: 5
   tiltSpeed: 5
-  grindSpeed: 5.11
+  grindSpeed: 2
 --- !u!1001 &7100626481261951499
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -74,7 +74,7 @@ public class ScoreManager : MonoBehaviour
         winPanel.SetActive(true);
     }
 
-    void LoseGame()
+    public void LoseGame()
     {
         gameOver = true;
         Time.timeScale = 0;
