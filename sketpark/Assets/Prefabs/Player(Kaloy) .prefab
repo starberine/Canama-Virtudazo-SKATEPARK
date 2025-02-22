@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kaloy
-  speed: 7
+  speed: 6
   jumpHeight: 9
   gravity: 9
   rotationSpeed: 10
@@ -200,9 +200,9 @@ MonoBehaviour:
   slopeSpeedBoost: 1.5
   maxSlopeAngle: 45
   cameraTransform: {fileID: 0}
-  rotationSpeed: 10
+  rotationSpeed: 5
   tiltSpeed: 5
-  grindSpeed: 10
+  grindSpeed: 3.49
 --- !u!4 &2208838005618453620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 686be760477b044499ece023dac6f3c5, type: 3}

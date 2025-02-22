@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kali
-  speed: 10
+  speed: 8
   jumpHeight: 5
   gravity: 9
   rotationSpeed: 10
@@ -205,9 +205,9 @@ MonoBehaviour:
   slopeSpeedBoost: 1.5
   maxSlopeAngle: 45
   cameraTransform: {fileID: 0}
-  rotationSpeed: 10
+  rotationSpeed: 5
   tiltSpeed: 5
-  grindSpeed: 10
+  grindSpeed: 5.11
 --- !u!1001 &7100626481261951499
 PrefabInstance:
   m_ObjectHideFlags: 0
